@@ -53,3 +53,8 @@ body, html {
     display: flex;
     margin-bottom: 10px;
 }
+
+.saved-gender-container {
+    border-style: dashed;
+    border-width: 1px;
+}

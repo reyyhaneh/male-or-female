@@ -18,23 +18,23 @@
                                                 
                 </div>
                 <div class="input-block">
-                    <input type="radio" id="maleOption" name="maleOption" value="maleOption">    
+                    <input type="radio" id="maleOption" name="gender" value="maleOption">    
                     <label for="maleOption">male</label>
                 </div>
                 <div class="input-block">
-                    <input type="radio" id="femaleOption" name="femaleOption" value="femaleOption">    
+                    <input type="radio" id="femaleOption" name="gender" value="femaleOption">    
                     <label for="femaleOption">female</label>
                 </div>   
                 <div>
-                    <button type="submit" onclick="submitForm()">Submit</button>
-                    <button type="button">Save</button>
+                    <button type="submit" onclick="onSubmitForm()">Submit</button>
+                    <button type="button" onclick="onSaveName()">Save</button>
                 </div>
             
             </div>
             <div class="column" id="predictionColumn">
                 <h2>Prediction</h2>
-                <div id="gender">
-                </div>
+                <div id="genderPrediction"></div>
+                <div id="savedGender"></div>
             </div>
 
         </div>
