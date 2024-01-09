@@ -40,6 +40,7 @@ body, html {
 }
 .column label{
     display: inline-block;
+    margin-right: 10px;
 }
 .column button {
     display: flex;
@@ -57,4 +58,15 @@ body, html {
 .saved-gender-container {
     border-style: dashed;
     border-width: 1px;
+}
+.error-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FF0000; /* Red background color */
+    color: #FFFFFF; /* White text color */
+    text-align: center;
+    padding: 10px;
+    z-index: 1000; /* Adjust the z-index as needed to ensure it appears on top */
 }

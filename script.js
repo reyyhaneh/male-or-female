@@ -1,4 +1,4 @@
-function onSubmitForm() {
+function onSubmit() {
     const name = nameInput.value;
     // if data exists in local storage display the saved value for it under the predicted value.
     
@@ -18,7 +18,8 @@ function fetchDataFromApi(name) {
     fetch(`${apiEndpoint}?name=${encodeURIComponent(name)}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                displayError("Network was not ok.")
+                throw new Error('Error status: ${response.status}');
             }
             return response.json();
         })
@@ -31,13 +32,18 @@ function fetchDataFromApi(name) {
 }
 
 function updatePredictionColumn(prediction) {
-    const predictionColumn = document.getElementById('genderPrediction');
     const gender = prediction.gender;
-    const probability = prediction.probability;
-    predictionColumn.innerHTML = `<p>${gender}</p> <p>${probability}</p>`;
+    if (gender === null){
+        displayError("There is no prediction for this name.")
+    }
+    else{
+        const predictionColumn = document.getElementById('genderPrediction');
+        const probability = prediction.probability;
+        predictionColumn.innerHTML = `<p>${gender}</p> <p>${probability}</p>`;
+    }
 }
 
-function onSaveName(){
+function onSave(){
     const name = nameInput.value;
     if (name.trim() !== '') {
         const gender = getSelectedGender();
@@ -143,4 +149,16 @@ function clearSavedData(name) {
     localStorage.setItem('savedData', JSON.stringify(existingData));
 
     alert(`Saved data cleared for ${name}`);
+}
+
+
+function displayError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    const body = document.body;
+    body.appendChild(errorDiv);
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000); 
 }
