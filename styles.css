@@ -1,46 +1,55 @@
+
+/* This CSS block targets the html and body elements of the HTML file,
+setting marin and padding to 0 means that we want no extra space around the body.
+setting height to 100% means that we want the html and body to take the whole page of the browser */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
 }
+ /* This CSS block targets any element in the background class.*/
 
 .background {
-    background-image: url('background2.jpg'); /* Replace with the path to your image */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-image: url('background2.jpg'); /* Setting the background image */
+    background-size: cover; /* The background image covers the entire container*/
+    background-position: center; /* Sets the background position in the center*/
+    height: 100vh; /* Sets the height of the container to 100% of the viewport height*/
+    display: flex; /* Making the container a flex container and a flex box for its children */ 
+    align-items: center; /* Aligning the children in the center of flex boxes (vertically) */
+    justify-content: center; /* Aligning the children in the center of flex boxes (Horizontally) */
 }
 
+ /* This CSS block targets any element in the context-box class.*/
 .context-box {
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust the last value for transparency (0 is fully transparent, 1 is fully opaque) */
-    padding: 20px;
-    text-align: center;
-    max-width: 600px; /* Adjust as needed */
-    border-radius: 10px; /* Optional: add rounded corners to the context box */
+    background-color: rgba(255, 255, 255, 0.8); /* rgba: red, green, blue, alpha(transparency) 0: fully transparent and 1: fully opaque */
+    padding: 20px;/* Adds 20 pixels of padding to the content inside the box  */
+    text-align: center; /* Centers the text content inside the containers of this class */
+    border-radius: 10px; /* Rounded corners to the context box */
     display: flex;
-    flex : 1;
+    flex : 1; /* Helps flex items inside the container to have the same size */ 
 }
 
+/* Adjusting the color of h1 elemnts inside the containers of the context-box class*/
 .context-box h1 {
-    color: #333; /* Adjust text color as needed */
+    color: #333; 
 }
 
+/* Adjusting the color of p elemnts inside the containers of the context-box class*/
 .context-box p {
-    color: #555; /* Adjust text color as needed */
+    color: #555;
 }
 
+ /* This CSS block targets any element in the column class.*/
 .column {
     flex: 1;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Child elements of the flex box container will be aligned vertically */
 }
+
+/* This CSS block adds a 10px margin to all label elemnts in the column class */
 .column label{
-    display: inline-block;
-    margin-right: 10px;
+    margin-right: 10px; 
 }
 .column button {
     display: flex;
@@ -56,17 +65,20 @@ body, html {
 }
 
 .saved-gender-container {
-    border-style: dashed;
-    border-width: 1px;
+    border-style: dashed; /* Sets the style of the border to dashed */
+    border-width: 1px; /* Sets the border width */
 }
 .error-message {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: absolute; /* Sets the positio such that no space is created for the element in the page */
+    top: 0; /* There is no space at the top */
+    left: 0; /* There is no space at the left */
     width: 100%;
     background-color: #FF0000; /* Red background color */
     color: #FFFFFF; /* White text color */
     text-align: center;
     padding: 10px;
-    z-index: 1000; /* Adjust the z-index as needed to ensure it appears on top */
+    z-index: 1000; /* Larger z-index makes the element overlap other elements */
 }
+
+
+/* I have omitted comments for css lines that I have explained before */
